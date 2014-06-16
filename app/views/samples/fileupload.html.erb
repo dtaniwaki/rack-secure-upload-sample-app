@@ -1,0 +1,20 @@
+<h1>File Upload Test</h1>
+
+<%= params.inspect %>
+
+<h2>Single File</h2>
+<%= form_tag samples_fileupload_path, multipart: true do %>
+  <p>
+    <%= file_field_tag 'file' %>
+  </p>
+  <%= submit_tag "Upload" %>
+<% end %>
+
+<h2>Multiple Files</h2>
+
+<%= form_tag samples_fileupload_path, multipart: true do %>
+  <p>
+    <%= file_field_tag 'files[]', multiple: true %>
+  </p>
+  <%= submit_tag "Upload" %>
+<% end %>
